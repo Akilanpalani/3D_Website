@@ -3,14 +3,14 @@ import "./App.css";
 import { BrowserRouter as Router,Route, Routes } from "react-router-dom";
 
 import Star from "./components/Star";
-import Experiance from "./components/Experiance";
+import Main from "./components/hoc/Main";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Star />} />
-        <Route path="/message" element={<Experiance/>} />
+        <Route path="/message" element={<Main />} />
       </Routes>
     </Router>
   );

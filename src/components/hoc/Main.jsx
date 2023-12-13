@@ -1,18 +1,25 @@
 import { Canvas } from "react-three-fiber";
-import Experiance from "../Experiance";
+import Experience from "../Experience";
 
-import React from 'react'
+import React from "react";
 import { ScrollControls } from "@react-three/drei";
 
 const Main = () => {
   return (
     <>
-    <Canvas>
-      <ScrollControls pages={5} damping={0.3}/>
-      <Experiance />
-    </Canvas>
+      <Canvas
+        camera={{
+          position: [0, 0, 5],
+          fov: 30,
+        }}
+      >
+        <color attach="background" args={["#ececec"]} />
+        <ScrollControls pages={100} damping={1}>
+          <Experience />
+        </ScrollControls>
+      </Canvas>
     </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

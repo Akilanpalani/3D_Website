@@ -1,10 +1,7 @@
 import React from 'react'
 import { Text } from '@react-three/drei'
-<<<<<<< HEAD
 import { fadeOnBeforeCompileFlat } from './utils/fadeMaterial'
 
-=======
->>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
 
 const TextSection = ({ title, subtitle, ...props }) => {
   return (
@@ -20,10 +17,7 @@ const TextSection = ({ title, subtitle, ...props }) => {
             lineHeight={1}
           >
             {title}
-<<<<<<< HEAD
             <meshStandardMaterial color={"white"} onBeforeCompile={fadeOnBeforeCompileFlat}/>
-=======
->>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
           </Text>
         )}
         <Text
@@ -34,10 +28,7 @@ const TextSection = ({ title, subtitle, ...props }) => {
           maxWidth={2.5}
         >
           {subtitle}
-<<<<<<< HEAD
           <meshStandardMaterial color={"white"} onBeforeCompile={fadeOnBeforeCompileFlat}/>
-=======
->>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
         </Text>
       </group>
     </>

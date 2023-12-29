@@ -1,5 +1,7 @@
 import React from 'react'
 import { Text } from '@react-three/drei'
+import { fadeOnBeforeCompileFlat } from './utils/fadeMaterial'
+
 
 const TextSection = ({ title, subtitle, ...props }) => {
   return (
@@ -15,6 +17,7 @@ const TextSection = ({ title, subtitle, ...props }) => {
             lineHeight={1}
           >
             {title}
+            <meshStandardMaterial color={"white"} onBeforeCompile={fadeOnBeforeCompileFlat}/>
           </Text>
         )}
         <Text
@@ -25,6 +28,7 @@ const TextSection = ({ title, subtitle, ...props }) => {
           maxWidth={2.5}
         >
           {subtitle}
+          <meshStandardMaterial color={"white"} onBeforeCompile={fadeOnBeforeCompileFlat}/>
         </Text>
       </group>
     </>

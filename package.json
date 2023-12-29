@@ -11,12 +11,15 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^10.16.15",
     "gltfjsx": "^6.2.15",
+<<<<<<< HEAD
     "gsap": "^3.12.4",
+=======
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
     "lamina": "^1.1.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-three-fiber": "^6.0.13",
     "three": "^0.159.0",
     "web-vitals": "^2.1.4"

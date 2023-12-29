@@ -19,11 +19,16 @@ Command: npx gltfjsx@6.2.15 public/models/model/cloud.gltf
 
 // useGLTF.preload('/models/model/cloud.glb')
 
+<<<<<<< HEAD
 import React, { useRef } from 'react'
+=======
+import React from 'react'
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
 import { useGLTF } from '@react-three/drei'
 import { fadeOnBeforeCompile } from './utils/fadeMaterial'
 import { useFrame } from 'react-three-fiber';
 
+<<<<<<< HEAD
 export function Cloud({ sceneOpacity, ...props }) {
   const { nodes, materials } = useGLTF('/models/model/clouds.gltf')
 
@@ -41,8 +46,21 @@ export function Cloud({ sceneOpacity, ...props }) {
         envMapIntensity={2} 
         transparent />
       </mesh>
+=======
+export function Cloud({opacity,...props}) {
+  const { nodes, materials } = useGLTF('/models/model/cloud1.gltf')
+  return (
+    <group {...props} dispose={null}>
+      <mesh geometry={nodes.Node.geometry}>
+        <meshStandardMaterial envMapIntensity={2} transparent opacity={props.opacity}/>
+        </mesh>
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
     </group>
   )
 }
 
+<<<<<<< HEAD
 useGLTF.preload('/models/model/clouds.gltf')
+=======
+useGLTF.preload('/models/model/cloud.gltf')
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5

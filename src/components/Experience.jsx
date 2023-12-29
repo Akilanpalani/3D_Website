@@ -13,16 +13,23 @@ import { Airplane } from "./Airplane";
 import { Cloud } from "./Cloud";
 import { useFrame } from "react-three-fiber";
 import TextSection from "./TextSection";
+<<<<<<< HEAD
 import { usePlay } from "../contexts/Play";
 import { fadeOnBeforeCompile } from "./utils/fadeMaterial";
 
 
+=======
+
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
 const LINE_NB_POINTS = 1000;
 const CURVE_DISTANCE = 250;
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_AIRPLANE = 0.02;
 const AIRPLANE_MAX_ANGLE = 35;
+<<<<<<< HEAD
 const FRICTION_DISTANCE = 42;
+=======
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
 
 const Experience = () => {
 
@@ -39,9 +46,12 @@ const Experience = () => {
     ], []
   );
 
+<<<<<<< HEAD
   const sceneOpacity = useRef(0);
   const lineMaterialRef = useRef();
 
+=======
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
   const curve = useMemo(() => {
     return new THREE.CatmullRomCurve3(
       curvePoints,
@@ -54,17 +64,27 @@ const Experience = () => {
   const textSections = useMemo(() => {
     return [
       {
+<<<<<<< HEAD
         cameraRailDist: -1,
+=======
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
         position: new THREE.Vector3(
           curvePoints[1].x - 3,
           curvePoints[1].y,
           curvePoints[1].z
         ),
+<<<<<<< HEAD
         title: "Hello My Dear",
         subtitle: `As I sit here, penning down these words, I can't help but feel the vastness of the miles that separate us. Yet, in this distance, there exists a connection that defies geography, bridging the space between our hearts.`,
       },
       {
         cameraRailDist: 1.5,
+=======
+        title: "My Dearest World",
+        subtitle: `As I sit here, penning down these words, I can't help but feel the vastness of the miles that separate us. Yet, in this distance, there exists a connection that defies geography, bridging the space between our hearts.`,
+      },
+      {
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
         position: new THREE.Vector3(
           curvePoints[2].x + 2,
           curvePoints[2].y,
@@ -74,7 +94,10 @@ const Experience = () => {
         subtitle: `Welcome to my world`,
       },
       {
+<<<<<<< HEAD
         cameraRailDist: -1,
+=======
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
         position: new THREE.Vector3(
           curvePoints[3].x - 3,
           curvePoints[3].y,
@@ -88,6 +111,7 @@ const Experience = () => {
   // const linePoints = useMemo(() => {
   //   return curve.getPoints(LINE_NB_POINTS);
   // }, [curve]);
+<<<<<<< HEAD
 
   const clouds = useMemo(() => [
     //Starting
@@ -268,6 +292,8 @@ const Experience = () => {
       rotation: new THREE.Euler(0, 0, 0),
     }
   ], [])
+=======
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
 
   const shape = useMemo(() => {
     const shape = new THREE.Shape();
@@ -285,6 +311,7 @@ const Experience = () => {
   const { play, setHasScroll, end, setEnd } = usePlay();
 
   useFrame((_state, delta) => {
+<<<<<<< HEAD
 
     if (lastScroll.current <= 0 && scroll.offset > 0) {
       setHasScroll(true);
@@ -393,6 +420,55 @@ const Experience = () => {
       if (angleDegrees < 0) {
         angleDegrees = Math.max(angleDegrees, -AIRPLANE_MAX_ANGLE)
       }
+=======
+    if (scroll && typeof scroll.offset === "number") {
+      // const curPointIndex = Math.min(
+      //   Math.round(scroll.offset * linePoints.length),
+      //   linePoints.length - 1
+      // );
+      const scrollOffset = Math.max(0, scroll.offset);
+
+      const curPoint = curve.getPoint(scrollOffset);
+
+      //Follow the curve points 
+      cameraGroup.current.position.lerp(curPoint, delta * 24);
+
+      //Make the group look ahead on the curve
+      const lookAtPoint = curve.getPoint(Math.min(scrollOffset + CURVE_AHEAD_CAMERA, 1));
+
+      const currentLookAt = cameraGroup.current.getWorldDirection(
+        new THREE.Vector3()
+      )
+      const targetLookAt = new THREE.Vector3()
+        .subVectors(curPoint, lookAtPoint)
+        .normalize();
+
+      const lookAt = currentLookAt.lerp(targetLookAt, delta * 24)
+      cameraGroup.current.lookAt(
+        cameraGroup.current.position.clone().add(lookAt)
+      );
+      // Airplane rotation
+
+      const tangent = curve.getTangent(scrollOffset + CURVE_AHEAD_AIRPLANE);
+
+      const nonLerpLookAt = new THREE.Group();
+      nonLerpLookAt.position.copy(curPoint);
+      nonLerpLookAt.lookAt(nonLerpLookAt.position.clone().add(targetLookAt));
+
+      tangent.applyAxisAngle(
+        new THREE.Vector3(0, 1, 0),
+        -nonLerpLookAt.rotation.y
+      )
+      let angle = Math.atan2(-tangent.z, tangent.x);
+      angle = -Math.PI / 2 + angle
+      let angleDegrees = (angle * 180) / Math.PI;
+      angleDegrees *= 2.4; //stronger angle
+
+      //limit plane angle
+      if (angleDegrees < 0) {
+        angleDegrees = Math.max(angleDegrees, -AIRPLANE_MAX_ANGLE)
+      }
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
       if (angleDegrees < 0) {
         angleDegrees = Math.min(angleDegrees, AIRPLANE_MAX_ANGLE)
       }
@@ -406,12 +482,16 @@ const Experience = () => {
         )
       )
 
+<<<<<<< HEAD
       airplane.current.quaternion.slerp(targetAirPlaneQuaternion, delta * 2);
 
       if(cameraGroup.current.position.z < curvePoints[curvePoints.length -1].z + 100) {
         setEnd(true);
         planeOutTl.current.play();
       }
+=======
+      airplane.current.quaternion.slerp(targetAirPlaneQuaternion, delta * 2)
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
     }
   });
 
@@ -523,6 +603,7 @@ const Experience = () => {
               },
             ]}
           />
+<<<<<<< HEAD
           <meshStandardMaterial
             color={"white"}
             ref={lineMaterialRef}
@@ -538,6 +619,52 @@ const Experience = () => {
           <Cloud sceneOpacity={sceneOpacity} {...cloud} key={index} />
         ))
       }
+=======
+          <meshStandardMaterial color={"white"} opacity={1} transparent
+            envMapIntensity={2}
+          />
+        </mesh>
+      </group>
+
+      <Cloud
+        opacity={0.5}
+        scale={[0.3, 0.3, 0.3]}
+        position={[-2, 200, 303]}
+      />
+      <Cloud
+        opacity={0.5}
+        scale={[0.3, 0.3, 0.3]}
+        position={[-2, 100, -30]}
+      />
+      <Cloud
+        opacity={0.7}
+        scale={[0.3, 0.3, 0.4]}
+        position={[-2, 1, -6]}
+        rotation-y={Math.PI / 9}
+      />
+      <Cloud
+        opacity={0.7}
+        scale={[0.5, 0.5, 0.5]}
+        position={[2, 0.12, -3]}
+        rotation-y={Math.PI / 9}
+      />
+      <Cloud
+        opacity={0.7}
+        scale={[0.5, 0.5, 0.5]}
+        position={[-2, -0.12, -3]}
+        rotation-y={Math.PI / 9}
+      />
+      <Cloud
+        opacity={0.7}
+        scale={[0.5, 0.5, 0.5]}
+        position={[1, 1, -53]}
+      />
+      <Cloud
+        opacity={0.3}
+        scale={[0.8, 0.8, 0.5]}
+        position={[0, 1, -100]}
+      />
+>>>>>>> 9148f7fd634f365700128a3b0caad42acf8739c5
     </>
   ), []);
 };

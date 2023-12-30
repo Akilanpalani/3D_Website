@@ -61,27 +61,97 @@ const Experience = () => {
           curvePoints[1].z
         ),
         title: "Hello My Dear",
-        subtitle: `As I sit here, penning down these words, I can't help but feel the vastness of the miles that separate us. Yet, in this distance, there exists a connection that defies geography, bridging the space between our hearts.`,
+        subtitle: `Wishing you a Happy New Year! May the upcoming year bring you happiness, success, and fulfillment`,
+        // subtitle: `As I sit here, penning down these words, I can't help but feel the vastness of the miles that separate us. Yet, in this distance, there exists a connection that defies geography, bridging the space between our hearts.`,
       },
       {
         cameraRailDist: 1.5,
         position: new THREE.Vector3(
-          curvePoints[2].x + 2,
+          curvePoints[2].x - 40,
           curvePoints[2].y,
-          curvePoints[2].z
+          curvePoints[2].z + 130
         ),
-        title: "Hello My World",
-        subtitle: `Welcome to my world`,
+        title: "Keep Going, Your Time Will Come.",
+        subtitle: `Your hopes and determination for this year becoming a reality are admirable. Keep persisting; undoubtedly, you will emerge as the best. However, it will take time.`,
       },
       {
-        cameraRailDist: -1,
+        cameraRailDist: -2.3,
         position: new THREE.Vector3(
-          curvePoints[3].x - 3,
+          curvePoints[3].x + 195,
           curvePoints[3].y,
-          curvePoints[3].z
+          curvePoints[3].z + 260
         ),
-        title: "Hello My World",
-        subtitle: `Welcome to my world`,
+        title: "Cheers to Happiness, Health",
+        subtitle: `Wishing you everlasting happiness, good health, and a positive outlook.`,
+      },
+      {
+        cameraRailDist: 1.5,
+        position: new THREE.Vector3(
+          curvePoints[4].x - 198,
+          curvePoints[4].y,
+          curvePoints[4].z + 260
+        ),
+        title: "Swift Blessings",
+        subtitle: `May all your prayers be answered swiftly. Stay strong, and know that I will also pray for you.`,
+      },
+      {
+        cameraRailDist: -2,
+        position: new THREE.Vector3(
+          curvePoints[5].x + 98,
+          curvePoints[5].y,
+          curvePoints[5].z + 220
+        ),
+        title: "Connecting Across Distances",
+        subtitle: `We were in the same place before without talking. Now, even though we're not in the same location, we're having a conversation.`,
+      },
+      {
+        cameraRailDist: -2.4,
+        position: new THREE.Vector3(
+          curvePoints[6].x - 5,
+          curvePoints[6].y,
+          curvePoints[6].z + 250
+        ),
+        title: "In Absence, Always Present",
+        subtitle: `While you may not be here in person right now, you're constantly on my mind and have a special place in my heart.`,
+      },
+      {
+        cameraRailDist: 2.8,
+        position: new THREE.Vector3(
+          curvePoints[7].x - 5 ,
+          curvePoints[7].y,
+          curvePoints[7].z + 400
+        ),
+        title: "Meet Up",
+        subtitle: `How about we get together next month? We'll find a way to make it happen!`,
+      },
+      {
+        cameraRailDist: -2.8,
+        position: new THREE.Vector3(
+          curvePoints[7].x - 5,
+          curvePoints[7].y,
+          curvePoints[7].z + 290
+        ),
+        title: "Let's Set the Scene",
+        subtitle: `If that works for you, let's make plans! Provide the date, location, and time.`,
+      },
+      {
+        cameraRailDist: 2.8,
+        position: new THREE.Vector3(
+          curvePoints[7].x + 2,
+          curvePoints[7].y,
+          curvePoints[7].z + 210
+        ),
+        title: "Again and Again",
+        subtitle: `Wish you a Happy New Year! New Year, New Beginnings! Let's start again from where we left!`,
+      },
+      {
+        cameraRailDist: 1,
+        position: new THREE.Vector3(
+          curvePoints[7].x + 1,
+          curvePoints[7].y + 1.5,
+          curvePoints[7].z + 120
+        ),
+        title2: "MISS YOU..!"
       },
     ]
   }, []);
@@ -106,6 +176,10 @@ const Experience = () => {
       scale: new THREE.Vector3(1.5, 1.5, 1.5),
       position: new THREE.Vector3(10, -1.2, -52)
     },
+    {
+      scale: new THREE.Vector3(1.5, 1.5, 1.5),
+      position: new THREE.Vector3(20, 5.9, -45)
+    },
     //First Point
     {
       scale: new THREE.Vector3(3, 3, 3),
@@ -113,6 +187,14 @@ const Experience = () => {
         curvePoints[1].x + 10,
         curvePoints[1].y - 4,
         curvePoints[1].z + 64
+      )
+    },
+    {
+      scale: new THREE.Vector3(3, 3, 3),
+      position: new THREE.Vector3(
+        curvePoints[1].x - 25,
+        curvePoints[1].y - 4,
+        curvePoints[1].z + 80
       )
     },
     {
@@ -180,7 +262,7 @@ const Experience = () => {
     {
       scale: new THREE.Vector3(3, 3, 3),
       position: new THREE.Vector3(
-        curvePoints[3].x + 3,
+        curvePoints[3].x + 30,
         curvePoints[3].y - 10,
         curvePoints[3].z + 50
       )
@@ -188,7 +270,7 @@ const Experience = () => {
     {
       scale: new THREE.Vector3(3, 3, 3),
       position: new THREE.Vector3(
-        curvePoints[3].x - 10,
+        curvePoints[3].x - 50,
         curvePoints[3].y,
         curvePoints[3].z + 30
       ),
@@ -209,6 +291,24 @@ const Experience = () => {
         curvePoints[3].x + 3,
         curvePoints[3].y - 5,
         curvePoints[3].z - 98
+      ),
+      rotation: new THREE.Euler(0, Math.PI / 3, 0),
+    },
+    {
+      scale: new THREE.Vector3(5, 5, 5),
+      position: new THREE.Vector3(
+        curvePoints[3].x + 70,
+        curvePoints[3].y - 5,
+        curvePoints[3].z - 60
+      ),
+      rotation: new THREE.Euler(0, Math.PI / 3, 0),
+    },
+    {
+      scale: new THREE.Vector3(3, 3, 3),
+      position: new THREE.Vector3(
+        curvePoints[3].x - 60,
+        curvePoints[3].y - 5,
+        curvePoints[3].z - 90
       ),
       rotation: new THREE.Euler(0, Math.PI / 3, 0),
     },
@@ -258,15 +358,15 @@ const Experience = () => {
       ),
       rotation: new THREE.Euler(Math.PI / 4, Math.PI / 6, 0),
     },
-    {
-      scale: new THREE.Vector3(4, 4, 4),
-      position: new THREE.Vector3(
-        curvePoints[7].x,
-        curvePoints[7].y,
-        curvePoints[7].z
-      ),
-      rotation: new THREE.Euler(0, 0, 0),
-    }
+    // {
+    //   scale: new THREE.Vector3(4, 4, 4),
+    //   position: new THREE.Vector3(
+    //     curvePoints[7].x,
+    //     curvePoints[7].y,
+    //     curvePoints[7].z
+    //   ),
+    //   rotation: new THREE.Euler(0, 0, 0),
+    // }
   ], [])
 
   const shape = useMemo(() => {
@@ -279,12 +379,22 @@ const Experience = () => {
 
   const cameraGroup = useRef();
   const cameraRail = useRef();
+  const camera = useRef();
   const scroll = useScroll();
   const lastScroll = useRef(0);
 
   const { play, setHasScroll, end, setEnd } = usePlay();
 
   useFrame((_state, delta) => {
+    if(window.innerWidth > window.innerHeight) {
+      //Landscape
+      camera.current.fov = 30;
+      camera.current.position.z = 5;
+    } else {
+      // Portrait
+      camera.current.fov = 80;
+      camera.current.position.z = 2;
+    }
 
     if (lastScroll.current <= 0 && scroll.offset > 0) {
       setHasScroll(true);
@@ -404,7 +514,7 @@ const Experience = () => {
           airplane.current.rotation.y,
           angle
         )
-      )
+      );
 
       airplane.current.quaternion.slerp(targetAirPlaneQuaternion, delta * 2);
 
@@ -493,7 +603,7 @@ const Experience = () => {
       <group ref={cameraGroup}>
         <Background backgroundColors={backgroundColors} />
         <group ref={cameraRail}>
-          <PerspectiveCamera position={[0, 0, 5]} fov={30} makeDefault />
+          <PerspectiveCamera ref={camera} position={[0, 0, 5]} fov={30} makeDefault />
         </group>
         <group ref={airplane}>
           <Float floatIntensity={1} speed={1.5} rotationIntensity={0.5}>

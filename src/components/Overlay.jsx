@@ -11,7 +11,7 @@ export const Overlay = () => {
             {
                 progress === 100 && (
                     <div class={`intro ${play ? "intro--disappear" : ""}`}>
-                        <h1 class="logo">Hey
+                        <h1 class="logo">Hello Madam
                             <div class="spinner">
                                 <div class="spinner__image" />
                             </div>
@@ -23,8 +23,8 @@ export const Overlay = () => {
                     </div>
                 )
             }
-            <div class={`outer ${end ? "outer--appear" : ""}`}>
-                <p class="outer__text">I really miss you can i take you to for a walk</p>
+            <div class={`outro ${end ? "outro--appear" : ""}`}>
+                <p class="outro__text">I really miss you</p>
             </div>
         </div>
     )

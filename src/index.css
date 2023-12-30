@@ -5,14 +5,14 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-html,body{
+/* html,body{
   height: 100%;
   width: 100%;
   margin: 0%;
@@ -35,6 +35,11 @@ html,body{
   height: 100%;
   width: 100%;
 } */
+@font-face {
+  font-family: 'DMSerifDisplay-Regular';
+  src: url('./fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+  /* Add other font formats and paths as needed */
+}
 
 #root {
   width: 100vw;
@@ -203,7 +208,7 @@ body {
   animation: fadeOut 1s ease-in-out forwards;
 }
 
-.outer{
+.outro{
 position: absolute;
 top: 0;
 left: 0;
@@ -216,13 +221,34 @@ opacity: 0;
 transition: opacity 4s ease-in-out;
 }
 
-.outer-appear{
+.outro-appear{
   opacity: 1;
 }
 
-.outer__text{
+.outro__text{
   font-size: 1.5rem;
   color: white;
+}
+
+/* Responsive Media Queries */
+
+@media screen and (max-width: 768px) {
+  .logo{
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
+  }
+  .intro--disappear .logo{
+    top: 24px;
+    transform: scale(0.5);
+    transform-origin: center top;
+  }
+  .spinner_image{
+    width: 82px;
+    height: 82px;
+  }
+  .outer__text{
+    font-size: 1rem;
+  }
 }
 /* Animations */
 @keyframes fadeUp {

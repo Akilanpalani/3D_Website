@@ -75,7 +75,7 @@ const Experience = () => {
         subtitle: `Your hopes and determination for this year becoming a reality are admirable. Keep persisting; undoubtedly, you will emerge as the best. However, it will take time.`,
       },
       {
-        cameraRailDist: -2.3,
+        cameraRailDist: -3.9,
         position: new THREE.Vector3(
           curvePoints[3].x + 195,
           curvePoints[3].y,
@@ -95,7 +95,7 @@ const Experience = () => {
         subtitle: `May all your prayers be answered swiftly. Stay strong, and know that I will also pray for you.`,
       },
       {
-        cameraRailDist: -2,
+        cameraRailDist: -2.5,
         position: new THREE.Vector3(
           curvePoints[5].x + 98,
           curvePoints[5].y,
@@ -105,14 +105,14 @@ const Experience = () => {
         subtitle: `We were in the same place before without talking. Now, even though we're not in the same location, we're having a conversation.`,
       },
       {
-        cameraRailDist: -2.4,
+        cameraRailDist: -2.6,
         position: new THREE.Vector3(
           curvePoints[6].x - 5,
           curvePoints[6].y,
           curvePoints[6].z + 250
         ),
         title: "In Absence, Always Present",
-        subtitle: `While you may not be here in person right now, you're constantly on my mind and have a special place in my heart.`,
+        subtitle: `While you may not be here in person right now, you're constantly on my mind and have a special place in my heart and i wanna be with you.`,
       },
       {
         cameraRailDist: 2.8,

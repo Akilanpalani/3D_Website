@@ -11,12 +11,12 @@ export const Overlay = () => {
             {
                 progress === 100 && (
                     <div class={`intro ${play ? "intro--disappear" : ""}`}>
-                        <h1 class="logo">Hello Madam
+                        <h1 class="logo">Hey Gv! 
                             <div class="spinner">
                                 <div class="spinner__image" />
                             </div>
                         </h1>
-                        <p class="intro__scroll">Scroll to start</p>
+                        <p class="intro__scroll">Enjoy the ride. Happy Journey!</p>
                         <button class="explore" onClick={() => {
                             setPlay(true);
                         }}>Explore</button>

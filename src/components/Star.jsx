@@ -8,11 +8,11 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 const Button = ({onClick}) => {
   return (
-    <group position={[0, 0, 15]}>
+    <group position={[-8, 3, -15]}>
       <mesh>
         <Html>
           <button
-            className={`w-[200px] h-[50px] rounded-md animate hover:animate-none border-2 border-white bg-opacity-50 hover:bg-opacity-100 backdrop-blur-md`}
+            className={`w-[200px] h-[50px] text-white rounded-md animate hover:animate-none border-2 border-white bg-opacity-50 hover:bg-opacity-100 backdrop-blur-md`}
             onClick={onClick}
           >
             Click Here To See The Magic
